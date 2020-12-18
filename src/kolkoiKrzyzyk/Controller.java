@@ -16,6 +16,15 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     @FXML
+    private Button button00;
+
+    @FXML
+    private Button button10;
+
+    @FXML
+    private Button button20;
+
+    @FXML
     private Button button01;
 
     @FXML
@@ -34,19 +43,15 @@ public class Controller implements Initializable {
     private Button button22;
 
     @FXML
-    private Button button03;
-
-    @FXML
-    private Button button13;
-
-    @FXML
-    private Button button23;
-
-    @FXML
     private Button mainButton;
 
     @FXML
     private Label label;
+
+    @FXML
+    void button00Action(ActionEvent event) {
+
+    }
 
     @FXML
     void button01Action(ActionEvent event) {
@@ -59,7 +64,7 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    void button03Action(ActionEvent event) {
+    void button10Action(ActionEvent event) {
 
     }
 
@@ -74,7 +79,7 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    void button13Action(ActionEvent event) {
+    void button20Action(ActionEvent event) {
 
     }
 
@@ -89,11 +94,6 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    void button23Action(ActionEvent event) {
-
-    }
-
-    @FXML
     void mainButtonAction(ActionEvent event) {
 
     }
@@ -104,7 +104,7 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1){
         gameplay = new Gameplay();
-        buttons = new Button[][] { {button01, button02, button03}, {button11, button12, button13}, {button21, button22, button23}};
+        buttons = new Button[][] { {button00, button10, button20}, {button01, button11, button21}, {button02, button12, button22}};
         addButtonAction();
     }
 

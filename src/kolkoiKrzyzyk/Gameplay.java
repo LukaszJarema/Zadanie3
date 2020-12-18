@@ -31,6 +31,8 @@ public class Gameplay {
 
     public int getWinner(){
         int winner = BLANK;
+
+        //sprawdzanie wiersza
         for(int row = 0; row < SIZE; row++){
             for(int col = 1; col < SIZE; col++){
                 if(table[row] [col] != table[row] [col - 1]){
@@ -41,6 +43,8 @@ public class Gameplay {
                 }
             }
         }
+
+        //sprawdzanie kolumny
         for(int row = 0; row < SIZE; row++){
             for(int col = 1; col < SIZE; col++){
                 if(table[col] [row] != table[col - 1] [row]){
@@ -51,8 +55,18 @@ public class Gameplay {
                 }
             }
         }
+
+        //sprawdzanie przekątnych
         for(int i = 1; i < SIZE; i++){
             if(table[i] [i] != table[i - 1] [i - 1]){
+                break;
+            } else if(i == SIZE - 1){
+                winner = table[i] [i];
+                return winner;
+            }
+        }
+        for(int i = 0; i < SIZE - 1; i++){
+            if(table[i] [SIZE - 1 - i] != table[i + 1] [SIZE - 2 - i]){
                 break;
             } else if(i == SIZE - 2){
                 winner = table[i] [i];
